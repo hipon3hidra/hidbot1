@@ -113,7 +113,12 @@ $bot->command("buttons", function ($message) use ($bot) {
 	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Красноярск!"], ["text" => "Москва!"]]], true, true);
 
 	$bot->sendMessage($message->getChat()->getId(), "Выберите город", false, null,null, $keyboard);
-});
+
+
+
+
+
+
 
 // Отлов любых сообщений + обрабтка reply-кнопок
 $bot->on(function($Update) use ($bot){
@@ -133,6 +138,11 @@ $bot->on(function($Update) use ($bot){
 }, function($message) use ($name){
 	return true; // когда тут true - команда проходит
 });
+
+
+});
+
+
 
 // запускаем обработку
 $bot->run();
