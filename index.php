@@ -146,6 +146,7 @@ $bot->on(function($Update) use ($bot){
 	}
 	if(mb_stripos($mtext,"Новосибирск") !== false){
 		$bot->sendMessage($message->getChat()->getId(), "Вы выбрали город Новосибирск, можете выбрать интересующую вас категорию");
+$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => 			"Стимуляторы"], ["text" => "Эйфоретики"]]], true, true);
 	}
 }, function($message) use ($name){
 	return true; // когда тут true - команда проходит
