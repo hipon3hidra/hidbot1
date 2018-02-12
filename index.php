@@ -96,7 +96,7 @@ $bot->on(function($Update) use ($bot){
 // запускаем обработку
 $bot->run();
 
-
+echo "bot";
 
 
 
