@@ -1,44 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="imagetoolbar" content="no" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>404</title>
 
-<?php
-    include('vendor/autoload.php'); //Подключаем библиотеку
-    use Telegram\Bot\Api; 
+		<style>
+		body {background: #f9fee8;margin: 0; padding: 20px; text-align:center; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#666666;}
+		.error_page {width: 600px; padding: 50px; margin: auto;}
+		.error_page h1 {margin: 20px 0 0;}
+		.error_page p {margin: 10px 0; padding: 0;}		
+		a {color: #9caa6d; text-decoration:none;}
+		a:hover {color: #9caa6d; text-decoration:underline;}
+		</style>
 
-    $token = new Api('497644667:AAFYZE9znyLxdFez4tSD70RU1c-WMpGz-sk'); //Устанавливаем токен, полученный у BotFather
-    $result = $telegram -> getWebhookUpdates(); //Передаем в переменную $result полную информацию о сообщении пользователя
-    
-    $text = $result["message"]["text"]; //Текст сообщения
-    $chat_id = $result["message"]["chat"]["id"]; //Уникальный идентификатор пользователя
-    $name = $result["message"]["from"]["username"]; //Юзернейм пользователя
-    $keyboard = [["Последние статьи"],["Картинка"],["Гифка"]]; //Клавиатура
+</head>
 
-    if($text){
-         if ($text == "/start") {
-            $reply = "Добро пожаловать в бота!";
-            $reply_markup = $telegram->replyKeyboardMarkup([ 'keyboard' => $keyboard, 'resize_keyboard' => true, 'one_time_keyboard' => false ]);
-            $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply, 'reply_markup' => $reply_markup ]);
-        }elseif ($text == "/help") {
-            $reply = "Информация с помощью.";
-            $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply ]);
-        }elseif ($text == "Картинка") {
-            $url = "https://68.media.tumblr.com/6d830b4f2c455f9cb6cd4ebe5011d2b8/tumblr_oj49kevkUz1v4bb1no1_500.jpg";
-            $telegram->sendPhoto([ 'chat_id' => $chat_id, 'photo' => $url, 'caption' => "Описание." ]);
-        }elseif ($text == "Гифка") {
-            $url = "https://68.media.tumblr.com/bd08f2aa85a6eb8b7a9f4b07c0807d71/tumblr_ofrc94sG1e1sjmm5ao1_400.gif";
-            $telegram->sendDocument([ 'chat_id' => $chat_id, 'document' => $url, 'caption' => "Описание." ]);
-        }elseif ($text == "Последние статьи") {
-            $html=simplexml_load_file('http://netology.ru/blog/rss.xml');
-            foreach ($html->channel->item as $item) {
-	     $reply .= "\xE2\x9E\xA1 ".$item->title." (<a href='".$item->link."'>читать</a>)\n";
-        	}
-            $telegram->sendMessage([ 'chat_id' => $chat_id, 'parse_mode' => 'HTML', 'disable_web_page_preview' => true, 'text' => $reply ]);
-        }else{
-        	$reply = "По запросу \"<b>".$text."</b>\" ничего не найдено.";
-        	$telegram->sendMessage([ 'chat_id' => $chat_id, 'parse_mode'=> 'HTML', 'text' => $reply ]);
-        }
-    }else{
-    	$telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => "Отправьте текстовое сообщение." ]);
-    }
-?>
-
-
-
+<body class="login">
+  <div class="error_page">
+    <img alt="Kidmondo_face_sad" src="style/images/kidmondo_face_sad.gif" />
+    <h1>SORRY</h1>
+    <p>NOT FOUND</p>
+  </div>
+</body>
+</html>
