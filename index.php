@@ -110,7 +110,7 @@ $bot->on(function($update) use ($bot, $callback_loc, $find_command){
 
 // Reply-Кнопки
 $bot->command("buttons", function ($message) use ($bot) {
-	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text1" => "Красноярск!"], ["text2" => "Москва!"]]], true, true);
+	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Красноярск!"], ["text" => "Москва!"]]], true, true);
 
 	$bot->sendMessage($message->getChat()->getId(), "Выберите город", false, null,null, $keyboard);
 
@@ -127,12 +127,12 @@ $bot->on(function($Update) use ($bot){
 	$mtext = $message->getText();
 	$cid = $message->getChat()->getId();
 	
-	if(mb_stripos($mtext,"text1") !== false){
+	if(mb_stripos($mtext,"text") !== false){
 		$pic = "http://aftamat4ik.ru/wp-content/uploads/2017/05/14277366494961.jpg";
 
 		$bot->sendPhoto($message->getChat()->getId(), $pic);
 	}
-	if(mb_stripos($mtext,"text2") !== false){
+	if(mb_stripos($mtext,"text") !== false){
 		$bot->sendMessage($message->getChat()->getId(), "Отлично, вы выбрали Москву! Теперь выбирете категорию");
 	}
 }, function($message) use ($name){
