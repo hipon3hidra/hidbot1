@@ -37,8 +37,13 @@ $bot->command('help', function ($message) use ($bot) {
     $bot->sendMessage($message->getChat()->getId(), $answer);
 });
 
-// запускаем обработку
-$bot->run();
+
+
+
+
+
+
+
 
 
 
@@ -83,6 +88,13 @@ $bot->on(function($Update) use ($bot){
 
 
 
+
+
+
+
+
+// запускаем обработку
+$bot->run();
 
 
 
