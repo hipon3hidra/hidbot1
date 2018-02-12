@@ -16,8 +16,8 @@ if(true){
 $token = "497644667:AAFYZE9znyLxdFez4tSD70RU1c-WMpGz-sk";
 $bot = new \TelegramBot\Api\Client($token,null);
 
-if($_GET["bname"] == "revcombot"){
-	$bot->sendMessage("@burgercaputt", "Тест");
+if($_GET["bname"] == "Hihihidra"){
+	$bot->sendMessage("@hihihihidra_bot", "Тест");
 }
 
 // если бот еще не зарегистрирован - регистируем
