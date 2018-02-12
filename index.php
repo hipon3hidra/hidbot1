@@ -24,5 +24,21 @@ red.trigger")){
 	}
 }
 
+// обязательное. Запуск бота
+$bot->command('start', function ($message) use ($bot) {
+    $answer = 'Добро пожаловать!';
+    $bot->sendMessage($message->getChat()->getId(), $answer);
+});
+
+// помощ
+$bot->command('help', function ($message) use ($bot) {
+    $answer = 'Команды:
+/help - помощ';
+    $bot->sendMessage($message->getChat()->getId(), $answer);
+});
+
+// запускаем обработку
+$bot->run();
+
 
 
