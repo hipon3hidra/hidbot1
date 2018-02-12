@@ -28,6 +28,69 @@ red.trigger")){
 $bot->command('start', function ($message) use ($bot) {
     $answer = 'Добро пожаловать!';
     $bot->sendMessage($message->getChat()->getId(), $answer);
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			// Выбор города
+			// Reply-Кнопки
+			$bot->command("buttons", function ($message) use ($bot) {
+			$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => 			"Красноярск"], ["text" => "Новосибирск"]]], true, true);
+
+			$bot->sendMessage($message->getChat()->getId(), "Выберите город", false, 					null,null, $keyboard);
+				});
+
+
+
+
+			// Отлов любых сообщений + обработка reply-кнопок
+			$bot->on(function($Update) use ($bot){
+	
+				$message = $Update->getMessage();
+			$mtext = $message->getText();
+			$cid = $message->getChat()->getId();
+	
+			if(mb_stripos($mtext,"Красноярск") !== false){
+			$bot->sendMessage($message->getChat()->getId(), "Вы выбрали город 				Красноярск, можете выбрать интересующую вас категорию");
+			$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => 			"Стимуляторы"], ["text" => "Эйфоретики"]]], true, true);
+			
+
+
+
+
+
+
+
+				}
+				if(mb_stripos($mtext,"Новосибирск") !== false){
+					$bot->sendMessage($message->getChat()->getId(), "Вы 				выбрали город Новосибирск, можете выбрать интересующую вас категорию");
+			$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => 			"Стимуляторы"], ["text" => "Эйфоретики"]]], true, true);
+				}
+			}, function($message) use ($name){
+				return true; // когда тут true - команда проходит
+			});
+
+
+
+
+
+
+
 });
 
 // помощь
