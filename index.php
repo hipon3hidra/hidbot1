@@ -30,15 +30,71 @@ $bot->command('start', function ($message) use ($bot) {
     $bot->sendMessage($message->getChat()->getId(), $answer);
 });
 
-// помощ
+// помощь
 $bot->command('help', function ($message) use ($bot) {
     $answer = 'Команды:
-/help - помощ';
+/help - помощь';
     $bot->sendMessage($message->getChat()->getId(), $answer);
 });
 
 // запускаем обработку
 $bot->run();
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Выбор города
+// Reply-Кнопки
+$bot->command("buttons", function ($message) use ($bot) {
+	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Красноярск"], ["text" => "Новосибирск"]]], true, true);
+
+	$bot->sendMessage($message->getChat()->getId(), "тест", false, null,null, $keyboard);
+});
+
+
+
+
+// Отлов любых сообщений + обработка reply-кнопок
+$bot->on(function($Update) use ($bot){
+	
+	$message = $Update->getMessage();
+	$mtext = $message->getText();
+	$cid = $message->getChat()->getId();
+	
+	if(mb_stripos($mtext,"Красноярск") !== false){
+		$bot->sendMessage($message->getChat()->getId(), "Вы выбрали город Красноярск, можете выбрать интересующую вас категорию");
+	}
+	if(mb_stripos($mtext,"Новосибирск") !== false){
+		$bot->sendMessage($message->getChat()->getId(), "Вы выбрали город Новосибирск, можете выбрать интересующую вас категорию");
+	}
+}, function($message) use ($name){
+	return true; // когда тут true - команда проходит
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
