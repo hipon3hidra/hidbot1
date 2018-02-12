@@ -1,9 +1,6 @@
 
 <?php
 /**
- * revcom_bot
- *
- * @author - Александр Штокман
  */
 header('Content-Type: text/html; charset=utf-8');
 // подрубаем API
@@ -46,8 +43,8 @@ $bot->command('ping', function ($message) use ($bot) {
 
 // обязательное. Запуск бота
 $bot->command('start', function ($message) use ($bot) {
-    $answer = 'Добро пожаловать!';
-    $bot->sendMessage($message->getChat()->getId(), $answer);
+    $answer = 'Добро пожаловать! Выберите город в меню';
+    $bot->sendMessage($message->getChat()->getId(), $answer, $keyboards);
 });
 
 // помощ
