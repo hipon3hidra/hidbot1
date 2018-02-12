@@ -119,7 +119,7 @@ $bot->on(function($update) use ($bot, $callback_loc, $find_command){
 $bot->command("buttons", function ($message) use ($bot) {
 	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Красноярск"], ["text" => "Новосибирск"]]], true, true);
 
-	$bot->sendMessage($message->getChat()->getId(), "тест", false, null,null, $keyboard);
+	$bot->sendMessage($message->getChat()->getId(), "Выберите город", false, null,null, $keyboard);
 });
 
 
@@ -134,6 +134,15 @@ $bot->on(function($Update) use ($bot){
 	
 	if(mb_stripos($mtext,"Красноярск") !== false){
 		$bot->sendMessage($message->getChat()->getId(), "Вы выбрали город Красноярск, можете выбрать интересующую вас категорию");
+			$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => 			"Стимуляторы"], ["text" => "Эйфоретики"]]], true, true);
+			
+
+
+
+
+
+
+
 	}
 	if(mb_stripos($mtext,"Новосибирск") !== false){
 		$bot->sendMessage($message->getChat()->getId(), "Вы выбрали город Новосибирск, можете выбрать интересующую вас категорию");
