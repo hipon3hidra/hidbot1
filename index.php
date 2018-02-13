@@ -24,7 +24,9 @@ switch($message) {
 }
 switch($data){
     case '/nsk':
-    sendMessage($chat_id_in, "/nsk");
+    $inline_button1 = array("text"=>"Москва","url"=>"http://google.com");
+    $inline_button2 = array("text"=>"Красноярск","callback_data"=>'/plz');
+    sendMessage($chat_id_in, "/nsk", $replyMarkup);
     break;
 }
 
