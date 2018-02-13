@@ -77,7 +77,14 @@ $bot->command('ping', function ($message) use ($bot) {
 // обязательное. Запуск бота
 $bot->command('start', function ($message) use ($bot) {
     $answer = 'Добро пожаловать! Выберите город';
-    $bot->sendMessage($message->getChat()->getId(), $answer);
+
+
+// Reply-Кнопки
+
+	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Власть советам!"], ["text" => "Сиськи!"]]], true, true);
+
+	
+        $bot->sendMessage($message->getChat()->getId(), $answer, false, null,null, $keyboard);
 });
 
 // помощь
