@@ -1,57 +1,61 @@
 <?php
+$access_token = '497644667:AAFYZE9znyLxdFez4tSD70RU1c-WMpGz-sk';
+$api = 'https://api.telegram.org/bot' . $access_token;
+$output = json_decode(file_get_contents('php://input'), TRUE);
+$chat_id = $output['message']['chat']['id'];
+$message = $output['message']['text'];
+$callback_query = $output['callback_query'];
+$data = $callback_query['data'];
+$message_id = ['callback_query']['message']['message_id'];
+$chat_id_in = $callback_query['message']['chat']['id'];
+switch($message) {
 
-use Telegram\Bot\Commands\Command;
-use Telegram\Bot\Keyboard\Keyboard;
-
-$telegram = new Telegram\Bot\Api('MY_KEY'); 
-
-$update = $telegram->getWebhookUpdates();
-
-
-
-
-// обязательное. Запуск бота
-$bot->command('start', function ($message) use ($bot) {
-    $answer = 'Добро пожаловать! Выберите город';
-	$pic = "http://www.seresmitologicos.net/wp-content/uploads/2011/05/hidra_cab.jpg";
-});
-// данные сообщения в зависимости от callback_query
-if ( isset($this->update['callback_query'])) {
-    $message = $update['callback_query'];
-} else {
-    $message = $update;
+    case '/start':  
+    $inline_button1 = array("text"=>"Москва","url"=>"http://google.com");
+    $inline_button2 = array("text"=>"Красноярск","callback_data"=>'/plz');
+    $inline_button3 = array("text"=>"Новосибирск", "callback_data"=>'/nsk');
+	
+    $inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+     
+     sendMessage($chat_id, "Добро пожаловать! Выберите город", $replyMarkup);
+    break;
+}
+switch($data){
+    case '/nsk':
+    sendMessage($chat_id_in, "/nsk", $replyMarkup);
+    break;
+}
+switch($data){
+    case '/plz':
+answerCallbackQuery($callback->getId());
+    sendMessage($chat_id_in, "/plz", $replyMarkup);
+    break;
 }
 
-$chatId = $message['message']['chat']['id'];
+switch($message) {
 
-// правильно формируем клавиатуру:
-$keyboard = [
-    [
-        Keyboard::inlineButton(['callback_data'=>'/butt1','text'=>'Кнопка 1']),
-        Keyboard::inlineButton(['callback_data'=>'/buut2','text'=>'Кнопка 2'])
-    ]
-];
-
-$reply_markup = $telegram->replyKeyboardMarkup([ 
-    // 'keyboard' => $keyboard, // вместо этого используем:
-    'inline_keyboard' => $keyboard,
-    'resize_keyboard' => true, 
-    'one_time_keyboard' => false 
-]);
-
-
-// если нажали кнопку:
-if ( isset($this->update['callback_query'])) {
-  $telegram->sendMessage(array(
-    'chat_id' => $chatId,
-      'text' => "Вы нажали на кнопку с кодом: " . $message['data'], // именно в $message['data'] - будет то что прописано у нажатой кнопки в качестве callback_data
-      'reply_markup' => $reply_markup,
-  ));
-} else {
-  $telegram->sendMessage(array(
-    'chat_id' => $chatId,
-      'text' => 'Нажмите на одну из кнопок:',
-      'reply_markup' => $reply_markup,
-  ));
+    case '/nsk':  
+    $inline_button1 = array("text"=>"Косметика","callback_data"=>'/kosmo');
+    $inline_button2 = array("text"=>"Алкоголь","callback_data"=>'/alco');
+    $inline_button3 = array("text"=>"Чешуя", "callback_data"=>'/cheshuya');
+	
+    $inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+     
+     sendMessage($chat_id, "Вы выбрали город Новосибирск! Выберите категорию:", $replyMarkup);
+    break;
+}
+switch($data){
+    case '/kosmo':
+    sendMessage($chat_id_in, "/kosmo", $replyMarkup);
+    break;
 }
 
+
+
+function sendMessage($chat_id, $message, $replyMarkup) {
+  file_get_contents($GLOBALS['api'] . '/sendMessage?chat_id=' . $chat_id . '&text=' . urlencode($message) . '&reply_markup=' . $replyMarkup);
+}
