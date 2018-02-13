@@ -28,7 +28,6 @@ switch($data){
     break;
 
     case '/plz':
-    answerCallbackQuery($callback->getId());
     sendMessage($chat_id_in, "/plz", $replyMarkup);
     break;
 }
