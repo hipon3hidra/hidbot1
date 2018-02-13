@@ -123,7 +123,15 @@ switch($data){
     sendMessage($chat_id_in, "/cheshuya", $replyMarkup);
     break;
     case '/back':
-    sendMessage($chat_id_in, "/return1", $replyMarkup);
+    $inline_button1 = array("text"=>"Стимуляторы","callback_data"=>'/stim');
+    $inline_button2 = array("text"=>"Экстази","callback_data"=>'/ex');
+    $inline_button3 = array("text"=>"Марихуана", "callback_data"=>'/mar');
+    $inline_button4 = array("text"=>"Назад", "callback_data"=>'/back');	
+    $inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3], [$inline_button4]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+     
+     sendMessage($chat_id_in, "Вы выбрали город Москва! Выберите категорию:", $replyMarkup);
     break;
 }
 
