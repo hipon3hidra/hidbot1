@@ -30,7 +30,7 @@ switch($message) {
     $inline_button2 = array("text"=>"Красноярск","callback_data"=>'/krn');
     $inline_button3 = array("text"=>"Новосибирск", "callback_data"=>'/nsk');
 	
-    $inline_keyboard = [[$inline_button1,$inline_button2], [$inline_button3]];
+    $inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
      
@@ -59,7 +59,7 @@ switch($message) {
     $inline_button2 = array("text"=>"Алкоголь","callback_data"=>'/alco');
     $inline_button3 = array("text"=>"Чешуя", "callback_data"=>'/cheshuya');
     $inline_button4 = array("text"=>"Назад", "callback_data"=>'/back');	
-    $inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3, $inline_button4]];
+    $inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3], [$inline_button4]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
      
