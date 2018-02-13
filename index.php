@@ -89,34 +89,30 @@ $bot->command('start', function ($message) use ($bot) {
 
 // Reply-Кнопки
 
-	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[['callback_data' => 'data_test',"text" => "Москва"], ['callback_data' => 'data_test2',"text" => "Красноярск"]]], true, true);
+	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Москва"], ["text" => "Красноярск"]]], true, true);
 
 	
         $bot->sendMessage($message->getChat()->getId(), $answer, false, null,null, $keyboard);
 });
 
-// Обработка кнопок у сообщений
-$bot->on(function($update) use ($bot, $callback_loc, $find_command){
-	$callback = $update->getCallbackQuery();
-	$message = $callback->getMessage();
-	$chatId = $message->getChat()->getId();
-	$data = $callback->getData();
+// Отлов любых сообщений + обрабтка reply-кнопок
+$bot->on(function($Update) use ($bot){
 	
-	if($data == "data_test"){
-		$bot->answerCallbackQuery( $callback->getId(), "This is Ansver!",true);
-	}
-	if($data == "data_test2"){
-		$bot->sendMessage($chatId, "Это ответ!");
-		$bot->answerCallbackQuery($callback->getId()); // можно отослать пустое, чтобы просто убрать "часики" на кнопке
-	}
+	$message = $Update->getMessage();
+	$mtext = $message->getText();
+	$cid = $message->getChat()->getId();
+	
+	if(mb_stripos($mtext,"Москва") !== false){
+		$pic = "http://aftamat4ik.ru/wp-content/uploads/2017/05/14277366494961.jpg";
 
-}, function($update){
-	$callback = $update->getCallbackQuery();
-	if (is_null($callback) || !strlen($callback->getData()))
-		return false;
-	return true;
+		$bot->sendPhoto($message->getChat()->getId(), $pic);
+	}
+	if(mb_stripos($mtext,"Красноярск") !== false){
+		$bot->sendMessage($message->getChat()->getId(), "Смерть богатым!");
+	}
+}, function($message) use ($name){
+	return true; // когда тут true - команда проходит
 });
-
 
 
 
