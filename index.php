@@ -24,7 +24,7 @@ switch($message) {
 }
 switch($data){
     case '/nsk':
-    sendMessage($chat_id_in, "nsk");
+    sendMessage($chat_id_in, "/nsk");
     break;
 }
 
