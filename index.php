@@ -46,7 +46,7 @@ switch($data){
     break;
     case '/nsk':
  
-$inline_button1 = array("text"=>"Косметика","callback_data"=>'/kosmo');
+    $inline_button1 = array("text"=>"Косметика","callback_data"=>'/kosmo');
     $inline_button2 = array("text"=>"Алкоголь","callback_data"=>'/alco');
     $inline_button3 = array("text"=>"Чешуя", "callback_data"=>'/cheshuya');
     $inline_button4 = array("text"=>"Назад", "callback_data"=>'/back');	
@@ -55,7 +55,6 @@ $inline_button1 = array("text"=>"Косметика","callback_data"=>'/kosmo');
     $replyMarkup = json_encode($keyboard); 
      
      sendMessage($chat_id, "Вы выбрали город $data! Выберите категорию:", $replyMarkup);
-    break;
     break;
 
 
