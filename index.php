@@ -19,7 +19,7 @@ switch($message) {
     $inline_button6 = array("text"=>"Красноярск","callback_data"=>'/plz');
     $inline_button7 = array("text"=>"Москва", "callback_data"=>'/plz');
     $inline_button8 = array("text"=>"Красноярск","callback_data"=>'/plz');
-    $inline_keyboard = [[$inline_button1,$inline_button2,$inline_button3,$inline_button4,$inline_button5,$inline_button6,$inline_button7,$inline_button8]];
+    $inline_keyboard = [[$inline_button1,$inline_button2][$inline_button3,$inline_button4][$inline_button5,$inline_button6][$inline_button7,$inline_button8]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
      sendMessage($chat_id, "Добро пожаловать! Выберите город", $replyMarkup);
