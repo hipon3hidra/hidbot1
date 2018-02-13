@@ -92,7 +92,8 @@ $bot->command('start', function ($message) use ($bot) {
 	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Москва"], ["text" => "Красноярск"]]], true, true);
 
 	
-        $bot->sendMessage($message->getChat()->getId(), $answer, $pic, false, null,null, $keyboard);
+        $bot->sendMessage($message->getChat()->getId(), $answer, false, null,null, $keyboard);
+$bot->sendPhoto($message->getChat()->getId(), $pic);
 });
 
 // Отлов любых сообщений + обрабтка reply-кнопок
