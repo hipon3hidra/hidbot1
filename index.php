@@ -74,6 +74,14 @@ $bot->command('ping', function ($message) use ($bot) {
 	$bot->sendMessage($message->getChat()->getId(), 'pong!');
 });
 
+
+
+
+
+
+
+
+
 // обязательное. Запуск бота
 $bot->command('start', function ($message) use ($bot) {
     $answer = 'Добро пожаловать! Выберите город';
@@ -81,11 +89,48 @@ $bot->command('start', function ($message) use ($bot) {
 
 // Reply-Кнопки
 
-	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Москва"], ["text" => "Красноярск"]]], true, true);
+	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[['callback_data' => 'data_test',"text" => "Москва"], ['callback_data' => 'data_test2',"text" => "Красноярск"]]], true, true);
 
 	
         $bot->sendMessage($message->getChat()->getId(), $answer, false, null,null, $keyboard);
 });
+
+// Обработка кнопок у сообщений
+$bot->on(function($update) use ($bot, $callback_loc, $find_command){
+	$callback = $update->getCallbackQuery();
+	$message = $callback->getMessage();
+	$chatId = $message->getChat()->getId();
+	$data = $callback->getData();
+	
+	if($data == "data_test"){
+		$bot->answerCallbackQuery( $callback->getId(), "This is Ansver!",true);
+	}
+	if($data == "data_test2"){
+		$bot->sendMessage($chatId, "Это ответ!");
+		$bot->answerCallbackQuery($callback->getId()); // можно отослать пустое, чтобы просто убрать "часики" на кнопке
+	}
+
+}, function($update){
+	$callback = $update->getCallbackQuery();
+	if (is_null($callback) || !strlen($callback->getData()))
+		return false;
+	return true;
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // помощь
 $bot->command('help', function ($message) use ($bot) {
