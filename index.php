@@ -55,14 +55,14 @@ switch($data){
     case '/kosmo':
     sendMessage($chat_id_in, "/kosmo", $replyMarkup);
     break;
-    case '/kosmo':
+    case '/alco':
     sendMessage($chat_id_in, "/alco", $replyMarkup);
     break;
-    case '/kosmo':
+    case '/cheshuya':
     sendMessage($chat_id_in, "/cheshuya", $replyMarkup);
     break;
     case '/kosmo':
-    sendMessage($chat_id_in, "/back", $replyMarkup);
+    return goBack();
     break;
 }
 
