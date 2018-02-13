@@ -13,7 +13,7 @@ switch($message) {
     case '/start':  
     $inline_button1 = array("text"=>"Москва","url"=>"http://google.com");
     $inline_button2 = array("text"=>"Красноярск","callback_data"=>'/plz');
-    $inline_button3 = array("text"=>"Новосибирск", "sendMessage"=>'/nsk');
+    $inline_button3 = array("text"=>"Новосибирск", "callback_data"=>'/nsk');
 	
     $inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
