@@ -10,7 +10,7 @@ $message_id = ['callback_query']['message']['message_id'];
 $chat_id_in = $callback_query['message']['chat']['id'];
 switch($message) {
 
-    case '/start':  
+    case '/start, /return':  
     $inline_button1 = array("text"=>"Москва", "callback_data"=>'/msk');
     $inline_button2 = array("text"=>"Красноярск","callback_data"=>'/krn');
     $inline_button3 = array("text"=>"Новосибирск", "callback_data"=>'/nsk');
