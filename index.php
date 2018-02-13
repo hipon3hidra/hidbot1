@@ -26,13 +26,13 @@ switch($data){
     case '/nsk':
     sendMessage($chat_id_in, "/nsk", $replyMarkup);
     break;
-}
-switch($data){
+
     case '/plz':
-answerCallbackQuery($callback->getId());
+    answerCallbackQuery($callback->getId());
     sendMessage($chat_id_in, "/plz", $replyMarkup);
     break;
 }
+
 
 switch($message) {
 
