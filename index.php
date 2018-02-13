@@ -77,7 +77,7 @@ switch($data){
     sendMessage($chat_id_in, "/cheshuya", $replyMarkup);
     break;
     case '/back':
-    return goBack();
+    sendMessage($chat_id_in, "/return1", $replyMarkup);
     break;
 }
 
