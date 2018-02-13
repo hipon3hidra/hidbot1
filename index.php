@@ -11,7 +11,7 @@ $chat_id_in = $callback_query['message']['chat']['id'];
 switch($message) {
 
     case '/start':  
-    $inline_button1 = array("text"=>"Москва", "callback_data"=>'/pik');
+    $inline_button1 = array("text"=>"Москва", "callback_query"=>'/pik');
     $inline_button2 = array("text"=>"Красноярск","callback_data"=>'/plz');
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
