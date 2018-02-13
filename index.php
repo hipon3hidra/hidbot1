@@ -8,9 +8,24 @@ $callback_query = $output['callback_query'];
 $data = $callback_query['data'];
 $message_id = ['callback_query']['message']['message_id'];
 $chat_id_in = $callback_query['message']['chat']['id'];
+
 switch($message) {
 
-    case '/start, /return':  
+    case '/return1':  
+    $inline_button1 = array("text"=>"Москва", "callback_data"=>'/msk');
+    $inline_button2 = array("text"=>"Красноярск","callback_data"=>'/krn');
+    $inline_button3 = array("text"=>"Новосибирск", "callback_data"=>'/nsk');
+	
+    $inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+     
+     sendMessage($chat_id, "Добро пожаловать! Выберите город", $replyMarkup);
+    break;
+}
+switch($message) {
+
+    case '/start':  
     $inline_button1 = array("text"=>"Москва", "callback_data"=>'/msk');
     $inline_button2 = array("text"=>"Красноярск","callback_data"=>'/krn');
     $inline_button3 = array("text"=>"Новосибирск", "callback_data"=>'/nsk');
@@ -61,7 +76,7 @@ switch($data){
     case '/cheshuya':
     sendMessage($chat_id_in, "/cheshuya", $replyMarkup);
     break;
-    case '/kosmo':
+    case '/back':
     return goBack();
     break;
 }
