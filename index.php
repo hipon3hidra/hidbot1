@@ -9,7 +9,8 @@ $data = $callback_query['data'];
 $message_id = ['callback_query']['message']['message_id'];
 $chat_id_in = $callback_query['message']['chat']['id'];
 switch($message) {
-    case '/test':  
+
+    case '/start':  
     $inline_button1 = array("text"=>"Google url","url"=>"http://google.com");
     $inline_button2 = array("text"=>"work plz","callback_data"=>'/plz');
     $inline_keyboard = [[$inline_button1,$inline_button2]];
