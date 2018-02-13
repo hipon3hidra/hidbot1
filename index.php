@@ -131,7 +131,7 @@ switch($data){
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
      
-     sendMessage($chat_id_in, "Вы выбрали город Москва! Выберите категорию:", $replyMarkup);
+     sendMessage($chat_id_in, "Вы вернулись к выбору категорий города Москвы! Выберите категорию:", $replyMarkup);
     break;
 }
 
