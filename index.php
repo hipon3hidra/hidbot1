@@ -11,7 +11,7 @@ $chat_id_in = $callback_query['message']['chat']['id'];
 switch($message) {
 
     case '/start':  
-    $inline_button1 = array("text"=>"Москва", "callback_data"=>'/plz');
+    $inline_button1 = array("text"=>"Москва", "callback_data"=>'/msk');
     $inline_button2 = array("text"=>"Красноярск","callback_data"=>'/plz');
     $inline_button3 = array("text"=>"Новосибирск", "callback_data"=>'/plz');
 
@@ -22,8 +22,15 @@ switch($message) {
     break;
 }
 switch($data){
-    case '/plz':
-    sendMessage($chat_id_in, "plz");
+    case '/msk':
+    $inline_button1 = array("text"=>"Стим", "callback_data"=>'/msk');
+    $inline_button2 = array("text"=>"Пром","callback_data"=>'/plz');
+    $inline_button3 = array("text"=>"Банк", "callback_data"=>'/plz');
+
+    $inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+    sendMessage($chat_id, "Отлично, вы выбрали город Москва, выберите категорию", $replyMarkup);
     break;
 }
 
