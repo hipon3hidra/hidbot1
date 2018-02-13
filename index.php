@@ -11,8 +11,8 @@ $chat_id_in = $callback_query['message']['chat']['id'];
 switch($message) {
 
     case '/start':  
-    $inline_button1 = array("text"=>"Москва","url"=>"http://google.com");
-    $inline_button2 = array("text"=>"Красноярск","callback_data"=>'/plz');
+    $inline_button1 = array("text"=>"Москва", "callback_data"=>'/msk');
+    $inline_button2 = array("text"=>"Красноярск","callback_data"=>'/krn');
     $inline_button3 = array("text"=>"Новосибирск", "callback_data"=>'/nsk');
 	
     $inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3]];
@@ -23,13 +23,17 @@ switch($message) {
     break;
 }
 switch($data){
+    case '/msk':
+    sendMessage($chat_id_in, "/msk", $replyMarkup);
+    break;
+    case '/krn':
+    sendMessage($chat_id_in, "/krn", $replyMarkup);
+    break;
     case '/nsk':
     sendMessage($chat_id_in, "/nsk", $replyMarkup);
     break;
 
-    case '/plz':
-    sendMessage($chat_id_in, "/plz", $replyMarkup);
-    break;
+
 }
 
 
