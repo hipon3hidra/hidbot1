@@ -11,12 +11,12 @@ $chat_id_in = $callback_query['message']['chat']['id'];
 switch($message) {
 
     case '/start':  
-    $inline_button1 = array("text"=>"Google url","url"=>"http://google.com");
-    $inline_button2 = array("text"=>"work plz","callback_data"=>'/plz');
+    $inline_button1 = array("text"=>"Москва","url"=>"http://google.com");
+    $inline_button2 = array("text"=>"Красноярск","callback_data"=>'/plz');
     $inline_keyboard = [[$inline_button1,$inline_button2]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
-     sendMessage($chat_id, "ok", $replyMarkup);
+     sendMessage($chat_id, "Добро пожаловать! Выберите город", $replyMarkup);
     break;
 }
 switch($data){
