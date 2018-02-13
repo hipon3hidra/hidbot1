@@ -94,7 +94,9 @@ $bot->command('start', function ($message) use ($bot) {
 	
         $bot->sendMessage($message->getChat()->getId(), $answer, false, null,null, $keyboard);
 $bot->sendPhoto($message->getChat()->getId(), $pic);
+ else if ($text === "Hello" || $text === "Hi") { apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => 'Nice to meet you'));
 });
+
 
 // Отлов любых сообщений + обрабтка reply-кнопок
 $bot->on(function($Update) use ($bot){
