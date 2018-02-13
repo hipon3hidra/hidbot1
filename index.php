@@ -85,14 +85,14 @@ $bot->command('ping', function ($message) use ($bot) {
 // обязательное. Запуск бота
 $bot->command('start', function ($message) use ($bot) {
     $answer = 'Добро пожаловать! Выберите город';
-
+	$pic = "http://www.seresmitologicos.net/wp-content/uploads/2011/05/hidra_cab.jpg";
 
 // Reply-Кнопки
 
 	$keyboard = new \TelegramBot\Api\Types\ReplyKeyboardMarkup([[["text" => "Москва"], ["text" => "Красноярск"]]], true, true);
 
 	
-        $bot->sendMessage($message->getChat()->getId(), $answer, false, null,null, $keyboard);
+        $bot->sendMessage($message->getChat()->getId(), $answer, $pic, false, null,null, $keyboard);
 });
 
 // Отлов любых сообщений + обрабтка reply-кнопок
@@ -137,17 +137,12 @@ $bot->command('help', function ($message) use ($bot) {
 
 // передаем картинку
 $bot->command('getpic', function ($message) use ($bot) {
-	$pic = "http://aftamat4ik.ru/wp-content/uploads/2017/03/photo_2016-12-13_23-21-07.jpg";
+	$pic = "http://www.seresmitologicos.net/wp-content/uploads/2011/05/hidra_cab.jpg";
 
     $bot->sendPhoto($message->getChat()->getId(), $pic);
 });
 
-// передаем документ
-$bot->command('getdoc', function ($message) use ($bot) {
-	$document = new \CURLFile('shtirner.txt');
 
-    $bot->sendDocument($message->getChat()->getId(), $document);
-});
 
 // Кнопки у сообщений
 $bot->command("ibutton", function ($message) use ($bot) {
