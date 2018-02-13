@@ -7,6 +7,14 @@ $telegram = new Telegram\Bot\Api('MY_KEY');
 
 $update = $telegram->getWebhookUpdates();
 
+
+
+
+// обязательное. Запуск бота
+$bot->command('start', function ($message) use ($bot) {
+    $answer = 'Добро пожаловать! Выберите город';
+	$pic = "http://www.seresmitologicos.net/wp-content/uploads/2011/05/hidra_cab.jpg";
+});
 // данные сообщения в зависимости от callback_query
 if ( isset($this->update['callback_query'])) {
     $message = $update['callback_query'];
