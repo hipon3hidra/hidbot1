@@ -11,13 +11,13 @@ $chat_id_in = $callback_query['message']['chat']['id'];
 switch($message) {
 
     case '/start':  
-    $inline_button1 = array("text"=>"Москва", "callback_data"=>'/pik');
+    $inline_button1 = array("text"=>"Москва", "callback_data"=>'/plz');
     $inline_button2 = array("text"=>"Красноярск","callback_data"=>'/plz');
-    $inline_button1 = array("text"=>"Москва", "callback_data"=>'/pik');
+    $inline_button1 = array("text"=>"Москва", "callback_data"=>'/plz');
     $inline_button2 = array("text"=>"Красноярск","callback_data"=>'/plz');
-    $inline_button1 = array("text"=>"Москва", "callback_data"=>'/pik');
+    $inline_button1 = array("text"=>"Москва", "callback_data"=>'/plz');
     $inline_button2 = array("text"=>"Красноярск","callback_data"=>'/plz');
-    $inline_button1 = array("text"=>"Москва", "callback_data"=>'/pik');
+    $inline_button1 = array("text"=>"Москва", "callback_data"=>'/plz');
     $inline_button2 = array("text"=>"Красноярск","callback_data"=>'/plz');
     $inline_keyboard = [[$inline_button1,$inline_button2,$inline_button3,$inline_button4,$inline_button5,$inline_button6,$inline_button7,$inline_button8]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
@@ -30,11 +30,7 @@ switch($data){
     sendMessage($chat_id_in, "plz");
     break;
 }
-switch($data){
-    case '/pik':
-    sendMessage($chat_id_in, "pik");
-    
-}
+
 function sendMessage($chat_id, $message, $replyMarkup) {
   file_get_contents($GLOBALS['api'] . '/sendMessage?chat_id=' . $chat_id . '&text=' . urlencode($message) . '&reply_markup=' . $replyMarkup);
 }
