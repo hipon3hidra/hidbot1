@@ -24,11 +24,36 @@ switch($message) {
 }
 switch($data){
     case '/nsk':
-    $inline_button1 = array("text"=>"Москва","url"=>"http://google.com");
-    $inline_button2 = array("text"=>"Красноярск","callback_data"=>'/plz');
     sendMessage($chat_id_in, "/nsk", $replyMarkup);
     break;
 }
+switch($data){
+    case '/plz':
+    sendMessage($chat_id_in, "/plz", $replyMarkup);
+    break;
+}
+
+switch($message) {
+
+    case '/nsk':  
+    $inline_button1 = array("text"=>"Косметика","callback_data"=>'/kosmo');
+    $inline_button2 = array("text"=>"Алкоголь","callback_data"=>'/alco');
+    $inline_button3 = array("text"=>"Чешуя", "callback_data"=>'/cheshuya');
+	
+    $inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+     
+     sendMessage($chat_id, "Вы выбрали город Новосибирск! Выберите категорию:", $replyMarkup);
+    break;
+}
+switch($data){
+    case '/kosmo':
+    sendMessage($chat_id_in, "/kosmo", $replyMarkup);
+    break;
+}
+
+
 
 function sendMessage($chat_id, $message, $replyMarkup) {
   file_get_contents($GLOBALS['api'] . '/sendMessage?chat_id=' . $chat_id . '&text=' . urlencode($message) . '&reply_markup=' . $replyMarkup);
