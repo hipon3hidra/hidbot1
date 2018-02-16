@@ -366,6 +366,41 @@ break;
 
 
 
+
+
+
+
+switch($data){
+//Неудачный платеж
+case'/oplata':
+
+
+$inline_button1 = array("text"=>"Я оплатил","callback_data"=>'/oplata');
+$inline_button2 = array("text"=>"Контакты","callback_data"=>'/conact');
+$inline_keyboard = [[$inline_button1]];
+$keyboard=array("inline_keyboard"=>$inline_keyboard);
+$replyMarkup = json_encode($keyboard); 
+sendMessage($chat_id_in, "❌ Оплата не произведена!
+➖➖➖➖➖➖➖➖➖➖
+Подождите пару минут, и повторите снова
+➖➖➖➖➖➖➖➖➖➖
+Или обратитесь к администратору, в разделе контакты", $replyMarkup);
+
+
+break;
+
+}
+
+
+
+
+
+
+
+
+
+
+
 function sendMessage($chat_id, $message, $replyMarkup) {
   file_get_contents($GLOBALS['api'] . '/sendMessage?chat_id=' . $chat_id . '&text=' . urlencode($message) . '&reply_markup=' . $replyMarkup);
 }
