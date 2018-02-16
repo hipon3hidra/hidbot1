@@ -118,6 +118,20 @@ switch($data){
     $replyMarkup = json_encode($keyboard); 
      
      sendMessage($chat_id_in, "Вы выбрали категорию Экстази! Выберите подкатегорию:", $replyMarkup);
+
+      <script language="JavaScript" type="text/javascript">
+        // значение начальной секунды
+        var second=15;
+        function $tiktak()
+        {
+          if(second<=9){second="0" + second;}
+          if(document.getElementById){timer.innerHTML=second;}
+          if(second==00){return false;}
+          second--;
+          setTimeout("$tiktak()", 1000);
+        }
+	</script>
+sendMessage($tiktak, "Время вышло:", $replyMarkup);
     break;
     case '/cheshuya':
     sendMessage($chat_id_in, "/cheshuya", $replyMarkup);
@@ -140,3 +154,13 @@ switch($data){
 function sendMessage($chat_id, $message, $replyMarkup) {
   file_get_contents($GLOBALS['api'] . '/sendMessage?chat_id=' . $chat_id . '&text=' . urlencode($message) . '&reply_markup=' . $replyMarkup);
 }
+
+
+
+
+
+
+
+
+?> 
+ 
