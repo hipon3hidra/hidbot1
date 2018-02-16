@@ -9,6 +9,16 @@ $data = $callback_query['data'];
 $message_id = ['callback_query']['message']['message_id'];
 $chat_id_in = $callback_query['message']['chat']['id'];
 $komment = rand(1110,9999);
+$w_stopped = EvTimer::createStopped(10, 5, function($w) {
+
+
+});
+
+
+
+
+
+
 
 ///Выбор города с помощью текста
 switch($message) {
@@ -334,7 +344,7 @@ break;
 switch($data){
 //Оплата за 0.5 Кокаина
 case'/05cocamsk':
-
+$w_stopped->start();
 
 	$inline_button1 = array("text"=>"Я оплатил","callback_data"=>'/oplata');
     $inline_keyboard = [[$inline_button1]];
@@ -373,7 +383,7 @@ break;
 switch($data){
 //Неудачный платеж
 case'/oplata':
-
+$w->stop();
 
 $inline_button1 = array("text"=>"Я оплатил","callback_data"=>'/oplata');
 $inline_button2 = array("text"=>"Контакты","callback_data"=>'/conact');
