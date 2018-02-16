@@ -118,20 +118,12 @@ switch($data){
     $replyMarkup = json_encode($keyboard); 
      
      sendMessage($chat_id_in, "Вы выбрали категорию Экстази! Выберите подкатегорию:", $replyMarkup);
-
-      <script language="JavaScript" type="text/javascript">
-        // значение начальной секунды
-        var second=15;
-        function $tiktak()
-        {
-          if(second<=9){second="0" + second;}
-          if(document.getElementById){timer.innerHTML=second;}
-          if(second==00){return false;}
-          second--;
-          setTimeout("$tiktak()", 1000);
-        }
-	</script>
-sendMessage($tiktak, "Время вышло:", $replyMarkup);
+	for ($i = 60; ;$i--){
+if ($i<=0) {
+     sendMessage($chat_id_in, "Время вышло", $replyMarkup);
+break
+}
+}
     break;
     case '/cheshuya':
     sendMessage($chat_id_in, "/cheshuya", $replyMarkup);
