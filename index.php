@@ -316,21 +316,21 @@ break;
 
 
 
-
-switch($data){
-case'/ext':
-
-
-	$inline_button1 = array("text"=>"Я оплатил","callback_data"=>'/oplata');
-    $inline_keyboard = [[$inline_button1]];
-    $keyboard=array("inline_keyboard"=>$inline_keyboard);
-    $replyMarkup = json_encode($keyboard); 
-sendMessage($chat_id_in, "Если вы оплатили, нажми Я оплатил:", $replyMarkup);
+//*
+//switch($data){
+//case'/ext':
 
 
-break;
+//	$inline_button1 = array("text"=>"Я оплатил","callback_data"=>'/oplata');
+//    $inline_keyboard = [[$inline_button1]];
+//    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+//    $replyMarkup = json_encode($keyboard); 
+//sendMessage($chat_id_in, "Если вы оплатили, нажми Я оплатил:", $replyMarkup);
 
-}
+
+//break;
+
+//}
 
 
   	
