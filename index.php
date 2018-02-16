@@ -9,10 +9,7 @@ $data = $callback_query['data'];
 $message_id = ['callback_query']['message']['message_id'];
 $chat_id_in = $callback_query['message']['chat']['id'];
 $komment = rand(1110,9999);
-$w_stopped = EvTimer::createStopped(10, 5, function($w) {
 
-
-});
 
 
 
