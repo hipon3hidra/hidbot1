@@ -69,7 +69,7 @@ switch($data){
     $inline_button1 = array("text"=>"Стимуляторы","callback_data"=>'/stimmsk');
     $inline_button2 = array("text"=>"Экстази","callback_data"=>'/exmsk');
     $inline_button3 = array("text"=>"Марихуана", "callback_data"=>'/marmsk');
-    $inline_button4 = array("text"=>"Назад", "callback_data"=>'/backmsk');	
+    $inline_button4 = array("text"=>"Назад", "callback_data"=>'/back');	
     $inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3], [$inline_button4]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
@@ -81,7 +81,7 @@ switch($data){
     $inline_button1 = array("text"=>"Стимуляторы","callback_data"=>'/stimkrn');
     $inline_button2 = array("text"=>"Экстази","callback_data"=>'/exkrn');
     $inline_button3 = array("text"=>"Марихуана", "callback_data"=>'/markrn');
-    $inline_button4 = array("text"=>"Назад", "callback_data"=>'/backkrn');	
+    $inline_button4 = array("text"=>"Назад", "callback_data"=>'/back');	
     $inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3], [$inline_button4]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
@@ -93,7 +93,7 @@ switch($data){
     $inline_button1 = array("text"=>"Стимуляторы","callback_data"=>'/stimnsk');
     $inline_button2 = array("text"=>"Экстази","callback_data"=>'/exnsk');
     $inline_button3 = array("text"=>"Марихуана", "callback_data"=>'/marnsk');
-    $inline_button4 = array("text"=>"Назад", "callback_data"=>'/backnsk');	
+    $inline_button4 = array("text"=>"Назад", "callback_data"=>'/back');	
     $inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3], [$inline_button4]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
