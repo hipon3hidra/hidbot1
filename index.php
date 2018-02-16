@@ -163,9 +163,6 @@ sendMessage($chat_id_in, "Если вы оплатили, нажми Я опла
 		$w->stop();
 	break;
       }
-});
-
-
 break;
 }
 
