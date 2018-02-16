@@ -154,7 +154,7 @@ case'/ext':
 
 
 $w1 = new EvTimer(2, 0, function () {
-    sendMessage($chat_id_in, "Время вышло:", $replyMarkup);
+    sendMessage($chat_id_in, "Время вышло:");
 });
 
 
