@@ -145,6 +145,28 @@ switch($data){
 
 
 
+switch($data){
+case'/ext':
+  $w1 = new EvTimer(2, 0, function ($w) {
+    sendMessage($chat_id_in, "Время вышло:");
+
+	$inline_button1 = array("text"=>"Я оплатил","callback_data"=>'/oplata');
+    $inline_keyboard = [[$inline_button1]];
+    $keyboard=array("inline_keyboard"=>$inline_keyboard);
+    $replyMarkup = json_encode($keyboard); 
+sendMessage($chat_id_in, "Если вы оплатили, нажми Я оплатил:", $replyMarkup);
+
+
+	switch($data){
+	case '/oplata':
+		$w->stop();
+	break;
+      }
+
+
+}
+
+
 
 
 
