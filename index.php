@@ -128,7 +128,7 @@ switch($data){
 		    $keyboard=array("inline_keyboard"=>$inline_keyboard);
 		    $replyMarkup = json_encode($keyboard); 
 		     
-		     sendMessage($chat_id_in, "Вы выбрали категорию стимуляторы! Выберите подкатегорию:", $replyMarkup);
+		     sendMessage($chat_id_in, "Вы выбрали категорию стимуляторы Москва! Выберите подкатегорию:", $replyMarkup);
 		    break;
 ///Подкатегории Москва Экстази
 		    case '/exmsk':
@@ -140,7 +140,7 @@ switch($data){
 		    $keyboard=array("inline_keyboard"=>$inline_keyboard);
 		    $replyMarkup = json_encode($keyboard); 
 		     
-		     sendMessage($chat_id_in, "Вы выбрали категорию Экстази! Выберите подкатегорию:", $replyMarkup);
+		     sendMessage($chat_id_in, "Вы выбрали категорию Экстази Москва! Выберите подкатегорию:", $replyMarkup);
 
 		    break;
 ///Подкатегории Москва Марихуана
@@ -153,7 +153,7 @@ switch($data){
 		    $keyboard=array("inline_keyboard"=>$inline_keyboard);
 		    $replyMarkup = json_encode($keyboard); 
 		     
-		     sendMessage($chat_id_in, "Вы выбрали категорию Марихуана! Выберите подкатегорию:", $replyMarkup);
+		     sendMessage($chat_id_in, "Вы выбрали категорию Марихуана Москва! Выберите подкатегорию:", $replyMarkup);
 		    break;
 		    case '/backmsk':
 		    $inline_button1 = array("text"=>"Стимуляторы","callback_data"=>'/stimmsk');
@@ -179,7 +179,7 @@ switch($data){
 				    $keyboard=array("inline_keyboard"=>$inline_keyboard);
 				    $replyMarkup = json_encode($keyboard); 
 				     
-				     sendMessage($chat_id_in, "Вы выбрали категорию стимуляторы! Выберите подкатегорию:", $replyMarkup);
+				     sendMessage($chat_id_in, "Вы выбрали категорию стимуляторы Красноярск! Выберите подкатегорию:", $replyMarkup);
 				    break;
 ///Подкатегории Красноярск Экстази
 				    case '/exkrn':
@@ -191,7 +191,7 @@ switch($data){
 				    $keyboard=array("inline_keyboard"=>$inline_keyboard);
 				    $replyMarkup = json_encode($keyboard); 
 				     
-				     sendMessage($chat_id_in, "Вы выбрали категорию Экстази! Выберите подкатегорию:", $replyMarkup);
+				     sendMessage($chat_id_in, "Вы выбрали категорию Экстази Красноярск! Выберите подкатегорию:", $replyMarkup);
 
 				    break;
 ///Подкатегории Красноярск Марихуана
@@ -204,7 +204,7 @@ switch($data){
 				    $keyboard=array("inline_keyboard"=>$inline_keyboard);
 				    $replyMarkup = json_encode($keyboard); 
 				     
-				     sendMessage($chat_id_in, "Вы выбрали категорию Марихуана! Выберите подкатегорию:", $replyMarkup);
+				     sendMessage($chat_id_in, "Вы выбрали категорию Марихуана Красноярск! Выберите подкатегорию:", $replyMarkup);
 				    break;
 				    case '/backkrn':
 				    $inline_button1 = array("text"=>"Стимуляторы","callback_data"=>'/stimkrn');
@@ -215,7 +215,7 @@ switch($data){
 				    $keyboard=array("inline_keyboard"=>$inline_keyboard);
 				    $replyMarkup = json_encode($keyboard); 
 				     
-				     sendMessage($chat_id_in, "Вы вернулись к выбору категорий города Москвы! Выберите категорию:", $replyMarkup);
+				     sendMessage($chat_id_in, "Вы вернулись к выбору категорий города Красноярск! Выберите категорию:", $replyMarkup);
 				    break;
 
 
@@ -230,7 +230,7 @@ switch($data){
 		    $keyboard=array("inline_keyboard"=>$inline_keyboard);
 		    $replyMarkup = json_encode($keyboard); 
 		     
-		     sendMessage($chat_id_in, "Вы выбрали категорию стимуляторы! Выберите подкатегорию:", $replyMarkup);
+		     sendMessage($chat_id_in, "Вы выбрали категорию стимуляторы Новосибирск! Выберите подкатегорию:", $replyMarkup);
 		    break;
 ///Подкатегории Новосибирск Экстази
 		    case '/exnsk':
@@ -242,7 +242,7 @@ switch($data){
 		    $keyboard=array("inline_keyboard"=>$inline_keyboard);
 		    $replyMarkup = json_encode($keyboard); 
 		     
-		     sendMessage($chat_id_in, "Вы выбрали категорию Экстази! Выберите подкатегорию:", $replyMarkup);
+		     sendMessage($chat_id_in, "Вы выбрали категорию Экстази Новосибирск! Выберите подкатегорию:", $replyMarkup);
 
 		    break;
 ///Подкатегории Новосибирск Марихуана
@@ -255,7 +255,7 @@ switch($data){
 		    $keyboard=array("inline_keyboard"=>$inline_keyboard);
 		    $replyMarkup = json_encode($keyboard); 
 		     
-		     sendMessage($chat_id_in, "Вы выбрали категорию Марихуана! Выберите подкатегорию:", $replyMarkup);
+		     sendMessage($chat_id_in, "Вы выбрали категорию Марихуана Новосибирск! Выберите подкатегорию:", $replyMarkup);
 		    break;
 		    case '/backnsk':
 		    $inline_button1 = array("text"=>"Стимуляторы","callback_data"=>'/stimnsk');
@@ -266,7 +266,7 @@ switch($data){
 		    $keyboard=array("inline_keyboard"=>$inline_keyboard);
 		    $replyMarkup = json_encode($keyboard); 
 		     
-		     sendMessage($chat_id_in, "Вы вернулись к выбору категорий города Москвы! Выберите категорию:", $replyMarkup);
+		     sendMessage($chat_id_in, "Вы вернулись к выбору категорий города Новосибирска! Выберите категорию:", $replyMarkup);
 		    break;
 
 		}
