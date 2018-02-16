@@ -154,14 +154,10 @@ case'/ext':
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
 sendMessage($chat_id_in, "Если вы оплатили, нажми Я оплатил:", $replyMarkup);
-$w1 = new EvTimer(30, 0, function ($w) {
-	sendMessage($chat_id_in, "Время вышло:", $replyMarkup);
-});
+
 
 break;
-case '/oplata':
-$w->stop();
-break;
+
 }
 
 
