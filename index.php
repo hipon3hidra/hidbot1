@@ -295,13 +295,13 @@ break;
 //Развесовка Москва Скорость
 case '/skmsk':
 
-$inline_button1 = array("text"=>"1Г","callback_data"=>'/1cocamsk');
-$inline_button1 = array("text"=>"2Г","callback_data"=>'/2cocamsk');
-$inline_button1 = array("text"=>"3Г","callback_data"=>'/3cocamsk');
-$inline_button1 = array("text"=>"5Г","callback_data"=>'/5cocamsk');
-$inline_button1 = array("text"=>"10Г","callback_data"=>'/10cocamsk');
-$inline_button5 = array("text"=>"Назад", "callback_data"=>'/backmsk');	
-$inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3, [$inline_button4, $inline_button5, $inline_button5],[$inline_button5]];
+$inline_button1 = array("text"=>"1Г","callback_data"=>'/1skmsk');
+$inline_button2 = array("text"=>"2Г","callback_data"=>'/2skmsk');
+$inline_button3 = array("text"=>"3Г","callback_data"=>'/3skmsk');
+$inline_button4 = array("text"=>"5Г","callback_data"=>'/5skmsk');
+$inline_button5 = array("text"=>"10Г","callback_data"=>'/10skmsk');
+$inline_button6 = array("text"=>"Назад", "callback_data"=>'/backmsk');	
+$inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3], [$inline_button4, $inline_button5], [$inline_button6]];
 $keyboard=array("inline_keyboard"=>$inline_keyboard);
 $replyMarkup = json_encode($keyboard); 
      
