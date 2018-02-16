@@ -125,9 +125,7 @@ switch($data){
 
 
     break;
-$w1 = new EvTimer(2, 0, function () {
-    sendMessage($chat_id_in, "Время вышло:", $replyMarkup);
-});
+
     case '/cheshuya':
     sendMessage($chat_id_in, "/cheshuya", $replyMarkup);
     break;
@@ -142,6 +140,25 @@ $w1 = new EvTimer(2, 0, function () {
      
      sendMessage($chat_id_in, "Вы вернулись к выбору категорий города Москвы! Выберите категорию:", $replyMarkup);
     break;
+}
+
+
+
+
+
+
+
+switch($data){
+case'/ext':
+
+
+
+$w1 = new EvTimer(2, 0, function () {
+    sendMessage($chat_id_in, "Время вышло:", $replyMarkup);
+});
+
+
+break;
 }
 
 
