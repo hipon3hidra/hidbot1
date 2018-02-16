@@ -157,7 +157,7 @@ case'/ext':
 sendMessage($chat_id_in, "Если вы оплатили, нажми Я оплатил:", $replyMarkup);
 
 
-	if($data='/oplata'){
+	if($data == '/oplata'){
 	
 		$w->stop();
 	
