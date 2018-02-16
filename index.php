@@ -154,7 +154,7 @@ case'/ext':
     $inline_keyboard = [[$inline_button1]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
-
+sendMessage($chat_id_in, "Если вы оплатили, нажми Я оплатил:", $replyMarkup);
 
     EvTimer(2, 0, function ($w) {
     sendMessage($chat_id_in, "Время вышло:");
