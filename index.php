@@ -158,13 +158,7 @@ sendMessage($chat_id_in, "Если вы оплатили, нажми Я опла
 }
 
   	
-    switch($data){
-	case '/oplata':
-	$w->stop();
-sendMessage($chat_id_in, "оплата не прошла:", $replyMarkup);
-	break;
 
-      }
 
 
 
