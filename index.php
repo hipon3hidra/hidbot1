@@ -150,14 +150,17 @@ switch($data){
 
 switch($data){
 case'/ext':
+	$inline_button1 = array("text"=>"Я оплатил","callback_data"=>'/oplata');
 
 
-$w1 = new EvTimer(2, 0, function () {
-    echo "2 секунды прошло\n";
-});
 
-    EvTimer(2, 0, function () {
+    EvTimer(2, 0, function ($w) {
     sendMessage($chat_id_in, "Время вышло:");
+	switch($data){
+	case '/oplata':
+		$w->stop();
+	break;
+      }
 });
 
 
