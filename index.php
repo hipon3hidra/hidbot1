@@ -380,7 +380,7 @@ $inline_button2 = array("text"=>"Контакты","callback_data"=>'/conact');
 $inline_keyboard = [[$inline_button1],[$inline_button2]];
 $keyboard=array("inline_keyboard"=>$inline_keyboard);
 $replyMarkup = json_encode($keyboard); 
-sendMessage($chat_id_in, "❌ Оплата не произведена!
+sendMessage($chat_id_in, "❌ Оплата не произведена! kom {$komment}
 ➖➖➖➖➖➖➖➖➖➖
 Подождите пару минут, и повторите снова
 ➖➖➖➖➖➖➖➖➖➖
