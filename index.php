@@ -377,7 +377,7 @@ case'/oplata':
 
 $inline_button1 = array("text"=>"Я оплатил","callback_data"=>'/oplata');
 $inline_button2 = array("text"=>"Контакты","callback_data"=>'/conact');
-$inline_keyboard = [[$inline_button1]];
+$inline_keyboard = [[$inline_button1],[$inline_button2]];
 $keyboard=array("inline_keyboard"=>$inline_keyboard);
 $replyMarkup = json_encode($keyboard); 
 sendMessage($chat_id_in, "❌ Оплата не произведена!
