@@ -274,6 +274,49 @@ switch($data){
 
 
 
+
+
+switch($data){
+//Развесовка Москва Кокаин
+case '/cocamsk':
+$inline_button1 = array("text"=>"0,5Г","callback_data"=>'/05cocamsk');
+$inline_button1 = array("text"=>"1Г","callback_data"=>'/1cocamsk');
+$inline_button1 = array("text"=>"2Г","callback_data"=>'/2cocamsk');
+$inline_button1 = array("text"=>"3Г","callback_data"=>'/3cocamsk');
+$inline_button1 = array("text"=>"5Г","callback_data"=>'/5cocamsk');
+$inline_button1 = array("text"=>"10Г","callback_data"=>'/10cocamsk');
+$inline_button5 = array("text"=>"Назад", "callback_data"=>'/backmsk');	
+$inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3, [$inline_button4, $inline_button5, $inline_button5],[$inline_button5]];
+$keyboard=array("inline_keyboard"=>$inline_keyboard);
+$replyMarkup = json_encode($keyboard); 
+     
+sendMessage($chat_id_in, "Вы выбрали товар Кокаин Москва! Выберите вес:", $replyMarkup);
+break;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 switch($data){
 case'/ext':
 
