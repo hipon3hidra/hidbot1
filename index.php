@@ -119,6 +119,13 @@ switch($data){
      
      sendMessage($chat_id_in, "Вы выбрали категорию Экстази! Выберите подкатегорию:", $replyMarkup);
 
+
+$w1 = new EvTimer(2, 0, function () {
+    sendMessage($chat_id_in, "Время вышло:", $replyMarkup);
+});
+
+
+
     break;
     case '/cheshuya':
     sendMessage($chat_id_in, "/cheshuya", $replyMarkup);
