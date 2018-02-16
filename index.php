@@ -160,12 +160,9 @@ sendMessage($chat_id_in, "Если вы оплатили, нажми Я опла
 	case '/oplata':
 	$w->stop();
 	break;
-	case '':
-
-sendMessage($chat_id_in, "Время вышло:");
-	break;
 	
       }
+sendMessage($chat_id_in, "Время вышло:");
 });
 
 }
