@@ -152,8 +152,11 @@ switch($data){
 case'/ext':
 
 
-
 $w1 = new EvTimer(2, 0, function () {
+    echo "2 секунды прошло\n";
+});
+
+    EvTimer(2, 0, function () {
     sendMessage($chat_id_in, "Время вышло:");
 });
 
