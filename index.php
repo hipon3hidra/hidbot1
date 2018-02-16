@@ -118,12 +118,7 @@ switch($data){
     $replyMarkup = json_encode($keyboard); 
      
      sendMessage($chat_id_in, "Вы выбрали категорию Экстази! Выберите подкатегорию:", $replyMarkup);
-	for ($i = 60; ;$i--){
-if ($i<=0) {
-     sendMessage($chat_id_in, "Время вышло", $replyMarkup);
-break
-}
-}
+
     break;
     case '/cheshuya':
     sendMessage($chat_id_in, "/cheshuya", $replyMarkup);
