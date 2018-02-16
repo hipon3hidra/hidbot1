@@ -8,7 +8,7 @@ $callback_query = $output['callback_query'];
 $data = $callback_query['data'];
 $message_id = ['callback_query']['message']['message_id'];
 $chat_id_in = $callback_query['message']['chat']['id'];
-
+$komment = rand(1110,9999);
 
 ///Выбор города с помощью текста
 switch($message) {
@@ -346,7 +346,7 @@ sendMessage($chat_id_in, "Вы приобретаете 0,5 Кокаин
 ➖➖➖➖➖➖➖➖➖➖
 Кошелек: +79996667755
 Сумма: 5000 руб
-Комментарий: {$key['id']}
+Комментарий: {$komment}
 ➖➖➖➖➖➖➖➖➖➖
 БЕЗ КОММЕНТАРИЯ ДЕНЬГИ НЕ ЗАЧИСЛЯЮТСЯ
 ➖➖➖➖➖➖➖➖➖➖
