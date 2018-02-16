@@ -155,16 +155,18 @@ case'/ext':
     $replyMarkup = json_encode($keyboard); 
 sendMessage($chat_id_in, "Если вы оплатили, нажми Я оплатил:", $replyMarkup);
 
-  $w1 = new EvTimer(2, 0, function ($w) {
+  	$w1 = new EvTimer(2, 0, function ($w) {
+	sendMessage($chat_id_in, "Время вышло:");
+});
     switch($data){
 	case '/oplata':
 	$w->stop();
 sendMessage($chat_id_in, "оплата не прошла:");
 	break;
-	
+
       }
-sendMessage($chat_id_in, "Время вышло:");
-});
+
+
 
 }
 
