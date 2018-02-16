@@ -59,9 +59,9 @@ switch($message) {
 }
 switch($data){
     case '/msk':
-    $inline_button1 = array("text"=>"Стимуляторы","callback_data"=>'/stim');
-    $inline_button2 = array("text"=>"Экстази","callback_data"=>'/ex');
-    $inline_button3 = array("text"=>"Марихуана", "callback_data"=>'/mar');
+    $inline_button1 = array("text"=>"Стимуляторы","callback_data"=>'/stimmsk');
+    $inline_button2 = array("text"=>"Экстази","callback_data"=>'/exmsk');
+    $inline_button3 = array("text"=>"Марихуана", "callback_data"=>'/marmsk');
     $inline_button4 = array("text"=>"Назад", "callback_data"=>'/back');	
     $inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3], [$inline_button4]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
@@ -70,9 +70,9 @@ switch($data){
      sendMessage($chat_id_in, "Вы выбрали город Москва! Выберите категорию:", $replyMarkup);
     break;
     case '/krn':
-    $inline_button1 = array("text"=>"Стимуляторы","callback_data"=>'/stim');
-    $inline_button2 = array("text"=>"Экстази","callback_data"=>'/ex');
-    $inline_button3 = array("text"=>"Марихуана", "callback_data"=>'/mar');
+    $inline_button1 = array("text"=>"Стимуляторы","callback_data"=>'/stimkrn');
+    $inline_button2 = array("text"=>"Экстази","callback_data"=>'/exkrn');
+    $inline_button3 = array("text"=>"Марихуана", "callback_data"=>'/markrn');
     $inline_button4 = array("text"=>"Назад", "callback_data"=>'/back');	
     $inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3], [$inline_button4]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
