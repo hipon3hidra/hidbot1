@@ -340,6 +340,9 @@ break;
 
 
 switch($data){
+
+//Оплата за 0.5 Кокаина
+case'/05cocamsk':
 Timer::after('20s', function () {
    // выполнить 1 раз через 20 секунд.
 sendMessage($chat_id_in, "Время вышло:", $replyMarkup);
@@ -348,9 +351,6 @@ sendMessage($chat_id_in, "Время вышло:", $replyMarkup);
 $timer->cancel();
 }
 });
-//Оплата за 0.5 Кокаина
-case'/05cocamsk':
-
 
 	$inline_button1 = array("text"=>"Я оплатил","callback_data"=>'/oplata');
     $inline_keyboard = [[$inline_button1]];
