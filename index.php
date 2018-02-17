@@ -59,18 +59,13 @@ switch($message) {
    switch($message) {
 
    case '/start':  
-$keyboard = [
-    ['7', '8', '9'],
-    ['4', '5', '6'],
-    ['1', '2', '3'],
-         ['0']
-];
+
    $inline_button1 = array("text"=>"Москва", "callback_data"=>'/msk');
    $inline_button2 = array("text"=>"Красноярск","callback_data"=>'/krn');
     $inline_button3 = array("text"=>"Новосибирск", "callback_data"=>'/nsk');
 	
    $inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3]];
-
+   $keyboard=array("inline_keyboard"=>$inline_keyboard);
    $replyMarkup = json_encode($keyboard); 
      
    sendMessage($chat_id, "Добро пожаловать! Выберите город", $replyMarkup);
