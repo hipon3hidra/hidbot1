@@ -344,7 +344,7 @@ switch($data){
 //Оплата за 0.5 Кокаина
 case'/05cocamsk':
 
-	$inline_button1 = array("text"=>"Я оплатил","callback_data"=>'/oplata');
+	$inline_button1 = array("text"=>"✔ Я оплатил","callback_data"=>'/oplata');
     $inline_keyboard = [[$inline_button1]];
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
