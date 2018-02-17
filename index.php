@@ -340,14 +340,7 @@ break;
 
 
 switch($data){
-Timer::after('20s', function () {
-   // выполнить 1 раз через 20 секунд.
-sendMessage($chat_id_in, "Время вышло:", $replyMarkup);
-	if '/oplata' {
 
-$timer->cancel();
-}
-});
 //Оплата за 0.5 Кокаина
 case'/05cocamsk':
 
