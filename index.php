@@ -20,7 +20,7 @@ $komment = rand(1110,9999);
 ///Выбор города с помощью текста
 switch($message) {
 
-    case 'Москва':  
+    case 'Томск':  
     $inline_button1 = array("text"=>"Стимуляторы","callback_data"=>'/stim');
     $inline_button2 = array("text"=>"Экстази","callback_data"=>'/ex');
     $inline_button3 = array("text"=>"Марихуана", "callback_data"=>'/mar');
@@ -29,7 +29,7 @@ switch($message) {
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
      
-     sendMessage($chat_id, "Вы выбрали город Москва! Выберите категорию:", $replyMarkup);
+     sendMessage($chat_id, "Вы выбрали город Томск! Выберите категорию:", $replyMarkup);
     break;
     case 'Красноярск':  
     $inline_button1 = array("text"=>"Стимуляторы","callback_data"=>'/stim');
@@ -60,7 +60,7 @@ switch($message) {
 
    case '/start':  
 
-   $inline_button1 = array("text"=>"Москва", "callback_data"=>'/msk');
+   $inline_button1 = array("text"=>"Томск", "callback_data"=>'/msk');
    $inline_button2 = array("text"=>"Красноярск","callback_data"=>'/krn');
     $inline_button3 = array("text"=>"Новосибирск", "callback_data"=>'/nsk');
 	
@@ -72,7 +72,7 @@ switch($message) {
    break;
    }
 switch($data){
-///Выбор категории при выборе города Москва
+///Выбор категории при выборе города Томск
     case '/msk':
     $inline_button1 = array("text"=>"Стимуляторы","callback_data"=>'/stimmsk');
     $inline_button2 = array("text"=>"Экстази","callback_data"=>'/exmsk');
@@ -82,7 +82,7 @@ switch($data){
     $keyboard=array("inline_keyboard"=>$inline_keyboard);
     $replyMarkup = json_encode($keyboard); 
      
-     sendMessage($chat_id_in, "Вы выбрали город Москва! Выберите категорию:", $replyMarkup);
+     sendMessage($chat_id_in, "Вы выбрали город Томск! Выберите категорию:", $replyMarkup);
     break;
 ///Выбор категории при выборе города Красноярск
     case '/krn':
@@ -110,7 +110,7 @@ switch($data){
     break;
 ///При нажатии НАЗАД
     case '/back':
-    $inline_button1 = array("text"=>"Москва", "callback_data"=>'/msk');
+    $inline_button1 = array("text"=>"Томск", "callback_data"=>'/msk');
     $inline_button2 = array("text"=>"Красноярск","callback_data"=>'/krn');
     $inline_button3 = array("text"=>"Новосибирск", "callback_data"=>'/nsk');
 	
@@ -125,7 +125,7 @@ switch($data){
 
 
     		switch($data){
-///Подкатегории Москва Стимуляторы
+///Подкатегории Томск Стимуляторы
  		   case '/stimmsk':
  		    $inline_button1 = array("text"=>"Кокаин","callback_data"=>'/cocamsk');
 		    $inline_button2 = array("text"=>"Скорость","callback_data"=>'/skmsk');
@@ -136,9 +136,9 @@ switch($data){
 		    $keyboard=array("inline_keyboard"=>$inline_keyboard);
 		    $replyMarkup = json_encode($keyboard); 
 		     
-		     sendMessage($chat_id_in, "Вы выбрали категорию стимуляторы Москва! Выберите подкатегорию:", $replyMarkup);
+		     sendMessage($chat_id_in, "Вы выбрали категорию стимуляторы Томск! Выберите подкатегорию:", $replyMarkup);
 		    break;
-///Подкатегории Москва Экстази
+///Подкатегории Томск Экстази
 		    case '/exmsk':
 		    $inline_button1 = array("text"=>"экстази","callback_data"=>'/extmsk');
 		    $inline_button2 = array("text"=>"mdma","callback_data"=>'/mdmamsk');
@@ -148,10 +148,10 @@ switch($data){
 		    $keyboard=array("inline_keyboard"=>$inline_keyboard);
 		    $replyMarkup = json_encode($keyboard); 
 		     
-		     sendMessage($chat_id_in, "Вы выбрали категорию Экстази Москва! Выберите подкатегорию:", $replyMarkup);
+		     sendMessage($chat_id_in, "Вы выбрали категорию Экстази Томск! Выберите подкатегорию:", $replyMarkup);
 
 		    break;
-///Подкатегории Москва Марихуана
+///Подкатегории Томск Марихуана
 		    case '/marmsk':
 		    $inline_button1 = array("text"=>"Бошка","callback_data"=>'/bomsk');
 		    $inline_button2 = array("text"=>"Гашиш","callback_data"=>'/gamsk');
@@ -161,7 +161,7 @@ switch($data){
 		    $keyboard=array("inline_keyboard"=>$inline_keyboard);
 		    $replyMarkup = json_encode($keyboard); 
 		     
-		     sendMessage($chat_id_in, "Вы выбрали категорию Марихуана Москва! Выберите подкатегорию:", $replyMarkup);
+		     sendMessage($chat_id_in, "Вы выбрали категорию Марихуана Томск! Выберите подкатегорию:", $replyMarkup);
 		    break;
 		    case '/backmsk':
 		    $inline_button1 = array("text"=>"Стимуляторы","callback_data"=>'/stimmsk');
@@ -285,7 +285,7 @@ switch($data){
 
 
 switch($data){
-//Развесовка Москва Кокаин
+//Развесовка Томск Кокаин
 case '/cocamsk':
 $inline_button1 = array("text"=>"0,5Г Цена 5000₽","callback_data"=>'/05cocamsk');
 $inline_button2 = array("text"=>"1Г Цена 10000₽","callback_data"=>'/1cocamsk');
@@ -298,9 +298,9 @@ $inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3], [$inline
 $keyboard=array("inline_keyboard"=>$inline_keyboard);
 $replyMarkup = json_encode($keyboard); 
      
-sendMessage($chat_id_in, "Вы выбрали товар Кокаин Москва! Выберите вес:", $replyMarkup);
+sendMessage($chat_id_in, "Вы выбрали товар Кокаин Томск! Выберите вес:", $replyMarkup);
 break;
-//Развесовка Москва Скорость
+//Развесовка Томск Скорость
 case '/skmsk':
 
 $inline_button1 = array("text"=>"1Г","callback_data"=>'/1skmsk');
@@ -313,7 +313,7 @@ $inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3], [$inline
 $keyboard=array("inline_keyboard"=>$inline_keyboard);
 $replyMarkup = json_encode($keyboard); 
      
-sendMessage($chat_id_in, "Вы выбрали товар Скорость Москва! Выберите вес:", $replyMarkup);
+sendMessage($chat_id_in, "Вы выбрали товар Скорость Томск! Выберите вес:", $replyMarkup);
 break;
 
 }
