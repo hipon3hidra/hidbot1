@@ -129,7 +129,7 @@ switch($data){
  		   case '/stimmsk':
  		    $inline_button1 = array("text"=>"Кокаин","callback_data"=>'/cocamsk');
 		    $inline_button2 = array("text"=>"Скорость","callback_data"=>'/skmsk');
-		    $inline_button3 = array("text"=>"Мефедрон", "callback_data"=>'/mefmsk');
+		    $inline_button3 = array("text"=>"Метамфетамин", "callback_data"=>'/metmsk');
 		    $inline_button4 = array("text"=>"Амфетамин", "callback_data"=>'/amfmsk');
 		    $inline_button5 = array("text"=>"Назад", "callback_data"=>'/backmsk');	
 		    $inline_keyboard = [[$inline_button1,$inline_button2], [$inline_button3, $inline_button4], [$inline_button5]];
@@ -180,7 +180,7 @@ switch($data){
 		 		   case '/stimkrn':
 		 		    $inline_button1 = array("text"=>"Кокаин","callback_data"=>'/cocakrn');
 				    $inline_button2 = array("text"=>"Скорость","callback_data"=>'/skkrn');
-				    $inline_button3 = array("text"=>"Мефедрон", "callback_data"=>'/mefkrn');
+				    $inline_button3 = array("text"=>"Метамфетамин", "callback_data"=>'/metkrn');
 				    $inline_button4 = array("text"=>"Амфетамин", "callback_data"=>'/amfkrn');
 				    $inline_button5 = array("text"=>"Назад", "callback_data"=>'/backkrn');	
 				    $inline_keyboard = [[$inline_button1,$inline_button2], [$inline_button3, $inline_button4], [$inline_button5]];
@@ -231,7 +231,7 @@ switch($data){
  		   case '/stimnsk':
  		    $inline_button1 = array("text"=>"Кокаин","callback_data"=>'/cocansk');
 		    $inline_button2 = array("text"=>"Скорость","callback_data"=>'/sknsk');
-		    $inline_button3 = array("text"=>"Мефедрон", "callback_data"=>'/mefnsk');
+		    $inline_button3 = array("text"=>"Метамфетамин", "callback_data"=>'/metnsk');
 		    $inline_button4 = array("text"=>"Амфетамин", "callback_data"=>'/amfnsk');
 		    $inline_button5 = array("text"=>"Назад", "callback_data"=>'/backnsk');	
 		    $inline_keyboard = [[$inline_button1,$inline_button2], [$inline_button3, $inline_button4], [$inline_button5]];
@@ -303,11 +303,11 @@ break;
 //Развесовка Томск Скорость
 case '/skmsk':
 
-$inline_button1 = array("text"=>"1Г","callback_data"=>'/1skmsk');
-$inline_button2 = array("text"=>"2Г","callback_data"=>'/2skmsk');
-$inline_button3 = array("text"=>"3Г","callback_data"=>'/3skmsk');
-$inline_button4 = array("text"=>"5Г","callback_data"=>'/5skmsk');
-$inline_button5 = array("text"=>"10Г","callback_data"=>'/10skmsk');
+$inline_button1 = array("text"=>"1Г Цена 5000₽","callback_data"=>'/1skmsk');
+$inline_button2 = array("text"=>"2Г Цена 5000₽","callback_data"=>'/2skmsk');
+$inline_button3 = array("text"=>"3Г Цена 5000₽","callback_data"=>'/3skmsk');
+$inline_button4 = array("text"=>"5Г Цена 5000₽","callback_data"=>'/5skmsk');
+$inline_button5 = array("text"=>"10Г Цена 5000₽","callback_data"=>'/10skmsk');
 $inline_button6 = array("text"=>"Назад", "callback_data"=>'/backmsk');	
 $inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3], [$inline_button4, $inline_button5], [$inline_button6]];
 $keyboard=array("inline_keyboard"=>$inline_keyboard);
@@ -318,13 +318,77 @@ break;
 
 }
 
+//Развесовка Томск Метамфетамин
+case '/metmsk':
+
+$inline_button1 = array("text"=>"1Г Цена 5000₽","callback_data"=>'/1metmsk');
+$inline_button2 = array("text"=>"2Г Цена 5000₽","callback_data"=>'/2metmsk');
+$inline_button3 = array("text"=>"3Г Цена 5000₽","callback_data"=>'/3metmsk');
+$inline_button4 = array("text"=>"5Г Цена 5000₽","callback_data"=>'/5metmsk');
+$inline_button5 = array("text"=>"10Г Цена 5000₽","callback_data"=>'/10metmsk');
+$inline_button6 = array("text"=>"Назад", "callback_data"=>'/backmsk');	
+$inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3], [$inline_button4, $inline_button5], [$inline_button6]];
+$keyboard=array("inline_keyboard"=>$inline_keyboard);
+$replyMarkup = json_encode($keyboard); 
+     
+sendMessage($chat_id_in, "Вы выбрали товар Метамфетамин Томск! Выберите вес:", $replyMarkup);
+break;
+
+}
+//Развесовка Томск Амфетамин
+case '/amfmsk':
+
+$inline_button1 = array("text"=>"1Г Цена 5000₽","callback_data"=>'/1amfmsk');
+$inline_button2 = array("text"=>"2Г Цена 5000₽","callback_data"=>'/2amfmsk');
+$inline_button3 = array("text"=>"3Г Цена 5000₽","callback_data"=>'/3amfmsk');
+$inline_button4 = array("text"=>"5Г Цена 5000₽","callback_data"=>'/5amfmsk');
+$inline_button5 = array("text"=>"10Г Цена 5000₽","callback_data"=>'/10amfmsk');
+$inline_button6 = array("text"=>"Назад", "callback_data"=>'/backmsk');	
+$inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3], [$inline_button4, $inline_button5], [$inline_button6]];
+$keyboard=array("inline_keyboard"=>$inline_keyboard);
+$replyMarkup = json_encode($keyboard); 
+     
+sendMessage($chat_id_in, "Вы выбрали товар Амфетамин Томск! Выберите вес:", $replyMarkup);
+break;
+
+}
 
 
+//Развесовка Томск Экстази
+case '/extmsk':
 
+$inline_button1 = array("text"=>"1 шт Цена 5000₽","callback_data"=>'/1extmsk');
+$inline_button2 = array("text"=>"2 шт Цена 5000₽","callback_data"=>'/2extmsk');
+$inline_button3 = array("text"=>"3 шт Цена 5000₽","callback_data"=>'/3extmsk');
+$inline_button4 = array("text"=>"4 шт Цена 5000₽","callback_data"=>'/4extmsk');
+$inline_button5 = array("text"=>"5 шт Цена 5000₽","callback_data"=>'/5extmsk');
+$inline_button6 = array("text"=>"Назад", "callback_data"=>'/backmsk');	
+$inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3], [$inline_button4, $inline_button5], [$inline_button6]];
+$keyboard=array("inline_keyboard"=>$inline_keyboard);
+$replyMarkup = json_encode($keyboard); 
+     
+sendMessage($chat_id_in, "Вы выбрали товар Экстази Томск! Выберите вес:", $replyMarkup);
+break;
 
+}
 
+//Развесовка Томск MDMA
+case '/mdmamsk':
 
+$inline_button1 = array("text"=>"1 шт Цена 5000₽","callback_data"=>'/1mdmamsk');
+$inline_button2 = array("text"=>"2 шт Цена 5000₽","callback_data"=>'/2mdmamsk');
+$inline_button3 = array("text"=>"3 шт Цена 5000₽","callback_data"=>'/3mdmamsk');
+$inline_button4 = array("text"=>"4 шт Цена 5000₽","callback_data"=>'/4mdmamsk');
+$inline_button5 = array("text"=>"5 шт Цена 5000₽","callback_data"=>'/5mdmamsk');
+$inline_button6 = array("text"=>"Назад", "callback_data"=>'/backmsk');	
+$inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3], [$inline_button4, $inline_button5], [$inline_button6]];
+$keyboard=array("inline_keyboard"=>$inline_keyboard);
+$replyMarkup = json_encode($keyboard); 
+     
+sendMessage($chat_id_in, "Вы выбрали товар MDMA Томск! Выберите вес:", $replyMarkup);
+break;
 
+}
 
 
 
