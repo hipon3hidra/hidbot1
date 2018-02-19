@@ -357,10 +357,10 @@ break;
 //Развесовка Томск Экстази
 case '/extmsk':
 
-$inline_button1 = array("text"=>"1 шт Цена 5000₽","callback_data"=>'/1extmsk');
-$inline_button2 = array("text"=>"2 шт Цена 5000₽","callback_data"=>'/2extmsk');
-$inline_button3 = array("text"=>"3 шт Цена 5000₽","callback_data"=>'/3extmsk');
-$inline_button4 = array("text"=>"4 шт Цена 5000₽","callback_data"=>'/4extmsk');
+$inline_button1 = array("text"=>"1 шт Цена 1000₽","callback_data"=>'/1extmsk');
+$inline_button2 = array("text"=>"2 шт Цена 2000₽","callback_data"=>'/2extmsk');
+$inline_button3 = array("text"=>"3 шт Цена 3000₽","callback_data"=>'/3extmsk');
+$inline_button4 = array("text"=>"4 шт Цена 4000₽","callback_data"=>'/4extmsk');
 $inline_button5 = array("text"=>"5 шт Цена 5000₽","callback_data"=>'/5extmsk');
 $inline_button6 = array("text"=>"Назад", "callback_data"=>'/backmsk');	
 $inline_keyboard = [[$inline_button1,$inline_button2, $inline_button3], [$inline_button4, $inline_button5], [$inline_button6]];
