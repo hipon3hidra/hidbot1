@@ -316,7 +316,7 @@ $replyMarkup = json_encode($keyboard);
 sendMessage($chat_id_in, "Вы выбрали товар Скорость Томск! Выберите вес:", $replyMarkup);
 break;
 
-}
+
 
 //Развесовка Томск Метамфетамин
 case '/metmsk':
@@ -334,7 +334,7 @@ $replyMarkup = json_encode($keyboard);
 sendMessage($chat_id_in, "Вы выбрали товар Метамфетамин Томск! Выберите вес:", $replyMarkup);
 break;
 
-}
+
 //Развесовка Томск Амфетамин
 case '/amfmsk':
 
@@ -351,7 +351,7 @@ $replyMarkup = json_encode($keyboard);
 sendMessage($chat_id_in, "Вы выбрали товар Амфетамин Томск! Выберите вес:", $replyMarkup);
 break;
 
-}
+
 
 
 //Развесовка Томск Экстази
@@ -370,7 +370,7 @@ $replyMarkup = json_encode($keyboard);
 sendMessage($chat_id_in, "Вы выбрали товар Экстази Томск! Выберите вес:", $replyMarkup);
 break;
 
-}
+
 
 //Развесовка Томск MDMA
 case '/mdmamsk':
