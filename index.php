@@ -1,5 +1,5 @@
 <?php
-$access_token = '524184848:AAEBSRnyd4Tb79oVh_ZcwQe_O4xV9isic_M';
+$access_token = '497644667:AAFYZE9znyLxdFez4tSD70RU1c-WMpGz-sk';
 $api = 'https://api.telegram.org/bot' . $access_token;
 $output = json_decode(file_get_contents('php://input'), TRUE);
 $chat_id = $output['message']['chat']['id'];
